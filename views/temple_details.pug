@@ -1,0 +1,21 @@
+extends layout
+block content
+  h1
+    |View/Edit Temple Details</h1></div>
+  p
+    |Fields marked with an asterisk(*) are mandatory and details must be entered in at least one language. While the other fields are not mandatory, providing complete details will help devotees find your temple easily and it would also be easy for Sarvakshetra to highlight your temple, if the database contains detailed information.
+  .row
+    #js-form.col-lg-12
+  .row
+    #submit-row.col-lg-12
+      button.btn.btn-primary(onClick="saveTempleData(document.getElementById('templeId').value, bf)")
+        |Submit
+    input#templeInfo(type="hidden", value=JSON.stringify(templeData ? templeData : {}))
+    input#templeId(type="hidden", value=templeData._id)
+  script.
+    var BrutusinForms = brutusin["json-forms"];
+    var bf = BrutusinForms.create(schema);
+    var data = JSON.parse(document.getElementById('templeInfo').value);
+    var container = document.getElementById('js-form');
+
+    bf.render(container, data);

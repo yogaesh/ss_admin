@@ -1,0 +1,18 @@
+extends layout
+block content
+  h1
+    |Manage Temples
+  a.btn.btn-default.top-level(href="/admin/temples/new", title="Add a new temple to the database", role="button")
+    span.glyphicon.glyphicon-plus
+    span.action-text Add a Temple
+  a#deleteButton.btn.btn-default.top-level.disabled(onclick="deleteTemples()", title="Delete selected temples", role="button")
+    span.glyphicon.glyphicon-trash
+    span.action-text Delete selected temples
+  input#selectedList(type="hidden", value="[]")
+  table.table-striped.ft(width="60%")
+    each temple in temples
+      tr(id="tr_" + temple._id)
+        td
+          input(type="checkbox", value=temple._id, onclick="toggleHighlight(this)")
+        td
+          a.large(href="/admin/temples/" + temple._id + "?action=view", title="Click to view temple details") #{temple.localized_details[0].details.name}

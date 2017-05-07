@@ -1,0 +1,21 @@
+#submit-row{
+  text-align: center;
+}
+.action-text{
+  margin-left: 5px;
+}
+.ft{
+  margin-top: 10px;
+}
+.large{
+  font-size: 16px;
+}
+.table-striped > tbody > tr > .selected,
+.table-striped > tbody > .selected > td,
+.table-striped > tbody > .selected > th {
+  background-color: #e0e0e0 !important;
+  border-bottom: solid 1px #eee;
+}
+.top-level{
+  margin: 2px;
+}
