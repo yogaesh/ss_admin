@@ -5,20 +5,6 @@ var MongoClient = mongo.MongoClient;
 var basicAuth = require('express-basic-auth');
 var config = require('../config');
 
-/*var staticUserAuth = basicAuth({
-    users: {
-        'chitragupta': '0mN@m@$h1vaaya'
-    },
-    challenge: true
-});
-
-var apiAuth = basicAuth({
-    users: {
-        'chitragupta': 'M33n@ksh1'
-    },
-    challenge: false
-});*/
-
 var users = {};
 users[config.admin.user] = config.admin.pass;
 
